@@ -1,6 +1,62 @@
 .calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    margin: 40px;
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0px;
+}
+
+.calendar-header h1 {
+  margin: 0;
+}
+
+.header-btn-grp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-btn-grp button {
+  width: 40px;
+  height: 40px;
+  background-color: lightblue;
+  border-radius: 1000px;
+  border: none;
+  box-shadow: 5px 2px 5px 0px rgba(179, 179, 179, 1);
+}
+
+.header-btn-grp button:hover {
+  background-color: rgb(157, 203, 218);
+  cursor: pointer;
+}
+
+.header-btn-grp #todayBtn {
+  background-color: transparent;
+  margin: 0px 10px;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 90px;
+  height: 40px;
+  box-shadow: none;
+}
+
+.header-btn-grp #todayBtn:hover {
+  background-color: whitesmoke;
+}
+
+.header-dropdown {
+  width: 160px;
+  height: 45px;
+}
+
+.header-dropdown select {
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  background-color: whitesmoke;
+  padding: 0px 10px;
+  border: 0;
+  border-radius: 5px 5px 0px 0px;
+  border-bottom: 1px solid black;
 }

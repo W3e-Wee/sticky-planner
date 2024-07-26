@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CalendarEvent, CalendarModule, CalendarView } from 'angular-calendar';
 
 @Component({
@@ -10,8 +10,9 @@ import { CalendarEvent, CalendarModule, CalendarView } from 'angular-calendar';
   styleUrl: './angular-calendar.component.css',
 })
 export class AngularCalendarComponent {
-  view: CalendarView = CalendarView.Month;
-  viewDate: Date = new Date();
-  events: CalendarEvent[] = [];
+  @Input() view: CalendarView = CalendarView.Month;
+  @Input() viewDate: Date = new Date();
+  @Input() events: CalendarEvent[] = [];
+  
   CalendarView = CalendarView;
 }

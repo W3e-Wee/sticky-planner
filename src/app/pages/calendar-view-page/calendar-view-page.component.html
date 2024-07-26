@@ -1,18 +1,38 @@
-<div>
-    <div class="calendar-header">
-        <div>
-            <button>prev</button>
-            <span>Today</span>
-            <button>next</button>
-        </div>
-        <h1>Date</h1>
-        <div>
-            <select name="calendar-filter">
-                <option value="month">Month</option>
-                <option value="week">Week</option>
-                <option value="day">Day</option>
-            </select>
-        </div>
-    </div>
-    <angular-calendar></angular-calendar>
+<div class="calendar-header">
+  <div class="header-btn-grp">
+    <button mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Previous button icon"
+        fontIcon="navigate_before"
+        >Prev</mat-icon
+      >
+    </button>
+    <button mwlCalendarToday [(viewDate)]="viewDate" id="todayBtn">Today</button>
+    <button mwlCalendarNextView [view]="view" [(viewDate)]="viewDate">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Next button icon"
+        fontIcon="navigate_next"
+        >Next</mat-icon
+      >
+    </button>
+  </div>
+  <h1>{{ viewDate | calendarDate : view + "ViewTitle" : "en" }}</h1>
+  <form class="header-dropdown">
+    <select
+      name="calendarFilter"
+      [formControl]="calendarFilter"
+      (change)="view = changeCalendarView()"
+    >
+      <option [value]="calendarView.Month">Month</option>
+      <option [value]="calendarView.Week">Week</option>
+      <option [value]="calendarView.Day">Day</option>
+    </select>
+  </form>
 </div>
+<angular-calendar
+  [view]="view"
+  [viewDate]="viewDate"
+  [events]="events"
+></angular-calendar>
